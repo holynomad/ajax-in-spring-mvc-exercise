@@ -16,25 +16,49 @@
                 //alert('Demo 1 practice')
                 $.ajax({
                     type: 'GET',
-                    url: '${pageContext.request.contextPath}/',
+                    url: '${pageContext.request.contextPath}/demo1.html',
                     success: function(result) {
                         $('#result1').html(result);
                     }
                 })
             })
+
+            $('#buttonDemo2').click(function(){
+                //alert('Demo 1 practice')
+                var fullName = $('#fullName').val();
+
+                $.ajax({
+                    type: 'GET',
+                    url: '${pageContext.request.contextPath}/demo2/' + fullName + '.html',
+                    success: function(result) {
+                        $('#result2').html(result);
+                    }
+                })
+            })
         })
+
+
+
     </script>
 
 </head>
 
 <body>
 what's u'r name : ${name}
+<br>
 <fieldset>
     <legend>Demo 1</legend>
     <input type="button" value="Demo 1" id="buttonDemo1">
     <br>
     <span id="result1"></span>
+</fieldset>
 
+<fieldset>
+    <legend>Demo 2</legend>
+    Full name <input type = "text" id = "fullName">
+    <input type="button" value="Demo 2" id="buttonDemo2">
+    <br>
+    <span id="result2"></span>
 </fieldset>
 
 </body>
