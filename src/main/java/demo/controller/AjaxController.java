@@ -23,7 +23,7 @@ public class AjaxController {
     public String index(){
         System.out.println("index call");
 
-        return "index";
+        return "starter";
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
